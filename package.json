@@ -1,0 +1,23 @@
+{
+  "name": "Crytochain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyu96/crytochain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyu96/crytochain/issues"
+  },
+  "homepage": "https://github.com/hyu96/crytochain#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
