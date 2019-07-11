@@ -20,30 +20,32 @@ class Blockchain {
     for(let i=1; i < chain.length; i++) {
       const block = chain[i]
       const lastBlock = chain[i-1]
-      const { timestamp, lastHash, hash, data } = block
+      const { timestamp, lastHash, hash, data, nonce, difficulty } = block
       
       if (block.lastHash !== lastBlock.hash) {
         return false
       }
 
-      if (hash !== cryptoHash(timestamp, lastHash, data)) {
+      if (hash !== cryptoHash(timestamp, lastHash, data, nonce, difficulty)) {
         return false
       }
-
     }
     return true
   }
 
   replaceChain(chain) {
     if (chain.length <= this.chain.length) {
+      console.error('The incoming chain must be longer')
       return
     }
 
     if (!Blockchain.isValidChain(chain)) {
+      console.error('The incoming chain must be valid')
       return
     }
     
-    this.chain
+    console.log('replace chain with', chain)
+    this.chain = chain
   }
 }
 
