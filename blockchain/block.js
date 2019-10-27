@@ -1,5 +1,5 @@
 const { GENESIS_DATA, MINE_RATE } = require('../config.js')
-const cryptoHash = require('../util/crypto-hash')
+const { cryptoHash } = require('../util')
 const hexToBinary = require('hex-to-binary')
 
 class Block {
