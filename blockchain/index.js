@@ -6,7 +6,7 @@ class Blockchain {
     this.chain = [Block.genesis()]
   }
 
-  addBlock(data) {
+  addBlock({data}) {
     const lastBlock = this.chain[this.chain.length - 1]
     const minedBlock = Block.mineBlock({ lastBlock, data})
     this.chain.push(minedBlock)
@@ -37,7 +37,7 @@ class Blockchain {
     return true
   }
 
-  replaceChain(chain) {
+  replaceChain(chain, onSuccess) {
     if (chain.length <= this.chain.length) {
       console.error('The incoming chain must be longer')
       return
@@ -48,6 +48,7 @@ class Blockchain {
       return
     }
     
+    if (onSuccess) onSuccess();
     console.log('replace chain with', chain)
     this.chain = chain
   }
