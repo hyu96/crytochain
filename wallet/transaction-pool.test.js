@@ -36,7 +36,7 @@ describe('TransactionPool', () => {
     })
 
     describe('validTransactions()', () => {
-        let validTransactions;
+        let validTransactions, errorMock;
 
         beforeEach(() => {
             validTransactions = [];
